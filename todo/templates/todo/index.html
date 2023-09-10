@@ -11,6 +11,12 @@
     <h1>Todo</h1>
     <hr>
 
+    <p>
+       Welcome, {{ user }}. <a href="{% url 'logout' %}"> Log out</a>
+    </p>
+
+    <hr>
+
     <ul>
     {% for todo in todos %}
     <li>
@@ -19,7 +25,7 @@
             data-hx-delete="{% url 'todo:todos_pk' todo.pk %}"
             data-hx-trigger="click"
             data-hx-target="body"
-        >✗</span>
+        >x</span>
     </li>
     {% endfor %}
     </ul>
